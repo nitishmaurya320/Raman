@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+    
+    
+</head>
+<body>
+    
+
+    <div class="container">
+        <h1 class="heading">Time Remaining</h1>
+
+        <div class="time">
+            <div><p class="day">00</p>
+            <span>  Days</span></div>
+            <div><p class="hour">00</p>
+            <span>Hours</span></div>
+            <div><p class="minute">00</p>
+            <span>Minutes</span></div>
+            <div><p class="second">00</p>
+            <span>Seconds</span></div>
+        </div>
+    </div>
+   
+
+    <script>
+        var launchdate=new Date("Dec 8, 2024 00:45:00 ").getTime();
+        
+        
+        var x=setInterval(function(){
+            var currentdate=new Date().getTime();
+            var distance=launchdate-currentdate;
+        var days=Math.floor(distance/(1000*60*60*24));
+        var hour=Math.floor((distance/(1000*60*60))%24);
+        var minute=Math.floor((distance/(1000*60))%60);
+        var seconds=Math.floor(distance/(1000)%60);
+
+        document.querySelector('.day').innerText=days;
+        document.querySelector('.hour').innerHTML=hour;
+        document.querySelector('.minute').innerHTML=minute;
+        document.querySelector('.second').innerHTML=seconds;
+
+        var y=Math.floor((distance)/1000);
+
+        
+            if(y<1){
+                clearInterval(x);
+                window.location='birthday.html'
+
+            }
+
+        
+        },1000 );
+
+      
+        
+        console.log(Math.floor((launchdate-currentdate)/1000));    
+    </script>
+    
+</body>
+</html>
