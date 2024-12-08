@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="birthday.css">
 </head>
 <body style="background-color: black;">
-    <audio controls loop style="display:none" autoplay>
+    <audio  class="audio" controls loop style="display:none" >
         <source src="song.mp3" type="audio/mp3" >
     </audio>  
 
@@ -22,7 +22,7 @@
       border-radius: 5px;
       "src="raman.jpeg " type="image/jpeg">
     
-    <div class="birthdayCard">
+    <div  onclick="playy()" class="birthdayCard">
         <div class="cardFront">
           <div class="front-text">
           <h3 class="happy">HAPPY</h3>
@@ -80,6 +80,11 @@
         };
 // after this here we are calling both the function so it works
         start();
+       var x=document.queryselector('.audio');
+       function playy(){
+           
+           audio.play();
+       }
         
    </script>
     
